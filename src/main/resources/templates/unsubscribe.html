@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body>
+
+<div align="center" class="border-general">
+    <form action="#" th:action="@{/unsubscribe}" th:object="${user}" method="post">
+        <span>Are you sure you want to unsuscribe ? :(</span>
+        <table border="0" cellpadding="10">
+            <tr style="display:none">
+                <td>User ID:</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Unsubscribe</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Homepage - Music Magazine</title>
+</head>
+<body>
+<div align="center" class="border-general">
+    <h1>Welcome to Music Magazine! </h1>
+    <br/>
+
+    <form action="#" th:action="@{/retrieveUser}" th:object="${user}" method="post">
+        <span>Enter your first name to retrieve your data :</span>
+        <table border="0" cellpadding="10">
+            <tr>
+                <td><span>First name:</span></td>
+                <td>
+                    <input type="text" th:field="*{firstName}" /> <br>
+                    <span style="font-style: italic;font-size: 12px;">* Enter Juan Carlos</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="button-general" type="submit">Search</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

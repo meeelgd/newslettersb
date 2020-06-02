@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Subscribe</title>
+</head>
+<body>
+<div align="center" class="border-general">
+    <h1>Subscribe</h1>
+
+    <form action="#" th:action="@{/updateUser}" th:object="${user}" method="post">
+
+        <table border="0" cellpadding="10">
+            <tr style="display:none">
+                <td>User ID:</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td><span>mail:</span></td>
+                <td>
+                    <input type="text" th:field="*{mailAddress}" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Subscribe</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

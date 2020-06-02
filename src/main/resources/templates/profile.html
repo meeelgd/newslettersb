@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+
+<div align="center" class="border-general">
+    <form action="#" th:action="@{/subscribe}" th:object="${user}" method="post">
+
+                <span>Hello</span> <span th:text="*{firstName}"></span> <span th:text="*{lastName}"></span> ! <br>
+                <span>Welcome to your homepage</span> <br>
+
+                <div th:switch="${user.mailAddress == null}">
+                    <div style="padding-top: 2em;" th:case="${true}">
+                        <span>Would you like to subscribe to our newsletter ? </span>
+                        <a th:href="@{'/subscribe/' + ${user.id}}">Subscribe</a>
+                    </div>
+                    <div th:case="*">
+                        <a th:href="@{'/confirmUnsubscribe/' + ${user.id}}">Unsubscribe</a>
+                    </div>
+
+                </div>
+
+    </form>
+    <br>
+
+    <a th:href="@{'/'}">Disconnect</a>
+</div>
+</body>
+</html>
